@@ -24,6 +24,9 @@
 #include "libspirv.hpp"
 
 namespace spvtools {
+namespace opt {
+class Pass;
+}
 
 // C++ interface for SPIR-V optimization functionalities. It wraps the context
 // (including target environment and the corresponding SPIR-V grammar) and
@@ -38,6 +41,8 @@ class Optimizer {
   // only support move; copying is not allowed.
   struct PassToken {
     struct Impl;  // Opaque struct for holding inernal data.
+
+    static PassToken CreateWrap(std::unique_ptr<opt::Pass>&& pass);
 
     PassToken(std::unique_ptr<Impl>);
 

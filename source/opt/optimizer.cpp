@@ -28,6 +28,12 @@ struct Optimizer::PassToken::Impl {
   std::unique_ptr<opt::Pass> pass;  // Internal implementation pass.
 };
 
+Optimizer::PassToken Optimizer::PassToken::CreateWrap(
+        std::unique_ptr<opt::Pass>&& pass)
+{
+    return PassToken(MakeUnique<Optimizer::PassToken::Impl>(pass));
+}
+
 Optimizer::PassToken::PassToken(
     std::unique_ptr<Optimizer::PassToken::Impl> impl)
     : impl_(std::move(impl)) {}
