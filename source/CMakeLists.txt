@@ -251,6 +251,7 @@ set( SPIRV_INTERNAL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_opencl_std_header.h
     ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_spirv_header.h
     ${CMAKE_CURRENT_SOURCE_DIR}/macro.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/message.h
     ${CMAKE_CURRENT_SOURCE_DIR}/name_mapper.h
     ${CMAKE_CURRENT_SOURCE_DIR}/opcode.h
     ${CMAKE_CURRENT_SOURCE_DIR}/operand.h
