@@ -51,6 +51,7 @@ set ( SPIRV_TOOLS_OPT_HEADERS
     ir_builder.h
     ir_context.h
     ir_loader.h
+    iterator.h
     licm_pass.h
     local_access_chain_convert_pass.h
     local_redundancy_elimination.h
