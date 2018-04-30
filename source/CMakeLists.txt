@@ -266,7 +266,9 @@ set( SPIRV_INTERNAL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/text.h
     ${CMAKE_CURRENT_SOURCE_DIR}/text_handler.h
     ${CMAKE_CURRENT_SOURCE_DIR}/validate.h
+    )
 
+set( SPIRV_UTIL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bitutils.h
@@ -396,4 +398,6 @@ if(ENABLE_SPIRV_TOOLS_INSTALL)
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
   install(FILES ${SPIRV_INTERNAL_HEADERS}
       DESTINATION include/spirv-tools/)
+  install(FILES ${SPIRV_UTIL_HEADERS}
+      DESTINATION include/spirv-tools/util/)
 endif(ENABLE_SPIRV_TOOLS_INSTALL)
