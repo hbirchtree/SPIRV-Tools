@@ -118,7 +118,7 @@ function(spvtools_default_compile_options TARGET)
 
   if (${COMPILER_IS_LIKE_GNU})
     target_compile_options(${TARGET} PRIVATE
-      -std=c++11 -fno-exceptions -fno-rtti)
+      -std=c++11 -fno-exceptions)
     target_compile_options(${TARGET} PRIVATE
       -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion
       -Wno-sign-conversion)
