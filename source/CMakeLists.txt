@@ -266,6 +266,18 @@ set( SPIRV_INTERNAL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/text.h
     ${CMAKE_CURRENT_SOURCE_DIR}/text_handler.h
     ${CMAKE_CURRENT_SOURCE_DIR}/validate.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bitutils.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/hexfloat.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/huffman_codec.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/ilist.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/ilist_node.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/move_to_front.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/parse_number.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/string_utils.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/timer.h
     )
 
 set(SPIRV_SOURCES
