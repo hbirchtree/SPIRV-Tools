@@ -228,45 +228,49 @@ add_subdirectory(comp)
 add_subdirectory(opt)
 add_subdirectory(link)
 
+set( SPIRV_INTERNAL_HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bitutils.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/hex_float.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/parse_number.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/string_utils.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/timer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/assembly_grammar.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/binary.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cfa.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/diagnostic.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/disassemble.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/enum_set.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/enum_string_mapping.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext_inst.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/extensions.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/id_descriptor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/instruction.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_glsl_std_450_header.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_opencl_std_header.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_spirv_header.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/macro.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/name_mapper.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/opcode.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/operand.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/parsed_operand.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/print.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/spirv_constant.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/spirv_definition.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/spirv_endian.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/spirv_target_env.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/spirv_validator_options.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/table.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/text.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/text_handler.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/validate.h
+    )
+
 set(SPIRV_SOURCES
   ${spirv-tools_SOURCE_DIR}/include/spirv-tools/libspirv.h
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/bitutils.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/hex_float.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/parse_number.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/string_utils.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/util/timer.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/assembly_grammar.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/binary.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/cfa.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/diagnostic.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/disassemble.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/enum_set.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/enum_string_mapping.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/ext_inst.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/extensions.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/id_descriptor.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/instruction.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_glsl_std_450_header.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_opencl_std_header.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/latest_version_spirv_header.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/macro.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/name_mapper.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/opcode.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/operand.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/parsed_operand.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/print.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/spirv_constant.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/spirv_definition.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/spirv_endian.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/spirv_target_env.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/spirv_validator_options.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/table.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/text.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/text_handler.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/validate.h
+  ${SPIRV_INTERNAL_HEADERS}
 
   ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.cpp
