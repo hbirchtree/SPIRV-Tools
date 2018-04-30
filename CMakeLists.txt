@@ -218,6 +218,13 @@ if(ENABLE_SPIRV_TOOLS_INSTALL)
       ${CMAKE_CURRENT_SOURCE_DIR}/include/spirv-tools/linker.hpp
     DESTINATION
       ${CMAKE_INSTALL_INCLUDEDIR}/spirv-tools/)
+  install(
+    FILES
+      ${SPIRV_HEADER_INCLUDE_DIR}/spirv/unified1/spirv.h
+      ${SPIRV_HEADER_INCLUDE_DIR}/spirv/unified1/spirv.hpp
+      ${SPIRV_HEADER_INCLUDE_DIR}/spirv/unified1/GLSL.std.450.h
+      ${SPIRV_HEADER_INCLUDE_DIR}/spirv/unified1/OpenCL.std.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/spirv/unified1)
 endif(ENABLE_SPIRV_TOOLS_INSTALL)
 
 if (NOT "${SPIRV_SKIP_TESTS}")
