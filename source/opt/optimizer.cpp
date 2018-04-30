@@ -31,7 +31,7 @@ struct Optimizer::PassToken::Impl {
 Optimizer::PassToken Optimizer::PassToken::CreateWrap(
         std::unique_ptr<opt::Pass>&& pass)
 {
-    return PassToken(MakeUnique<Optimizer::PassToken::Impl>(pass));
+    return PassToken(MakeUnique<Optimizer::PassToken::Impl>(std::move(pass)));
 }
 
 Optimizer::PassToken::PassToken(
