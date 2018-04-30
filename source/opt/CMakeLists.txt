@@ -11,90 +11,94 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+set ( SPIRV_TOOLS_OPT_HEADERS
+    aggressive_dead_code_elim_pass.h
+    basic_block.h
+    block_merge_pass.h
+    build_module.h
+    ccp_pass.h
+    cfg_cleanup_pass.h
+    cfg.h
+    common_uniform_elim_pass.h
+    compact_ids_pass.h
+    composite.h
+    const_folding_rules.h
+    constants.h
+    copy_prop_arrays.h
+    dead_branch_elim_pass.h
+    dead_insert_elim_pass.h
+    dead_variable_elimination.h
+    decoration_manager.h
+    def_use_manager.h
+    dominator_analysis.h
+    dominator_tree.h
+    eliminate_dead_constant_pass.h
+    eliminate_dead_functions_pass.h
+    feature_manager.h
+    flatten_decoration_pass.h
+    fold.h
+    folding_rules.h
+    fold_spec_constant_op_and_composite_pass.h
+    freeze_spec_constant_value_pass.h
+    function.h
+    if_conversion.h
+    inline_exhaustive_pass.h
+    inline_opaque_pass.h
+    inline_pass.h
+    insert_extract_elim.h
+    instruction.h
+    instruction_list.h
+    ir_builder.h
+    ir_context.h
+    ir_loader.h
+    licm_pass.h
+    local_access_chain_convert_pass.h
+    local_redundancy_elimination.h
+    local_single_block_elim_pass.h
+    local_single_store_elim_pass.h
+    local_ssa_elim_pass.h
+    log.h
+    loop_dependence.h
+    loop_descriptor.h
+    loop_peeling.h
+    loop_unroller.h
+    loop_utils.h
+    loop_unswitch_pass.h
+    make_unique.h
+    mem_pass.h
+    merge_return_pass.h
+    module.h
+    null_pass.h
+    passes.h
+    pass.h
+    pass_manager.h
+    private_to_local_pass.h
+    propagator.h
+    redundancy_elimination.h
+    reflect.h
+    register_pressure.h
+    remove_duplicates_pass.h
+    replace_invalid_opc.h
+    scalar_analysis.h
+    scalar_analysis_nodes.h
+    scalar_replacement_pass.h
+    set_spec_constant_default_value_pass.h
+    simplification_pass.h
+    ssa_rewrite_pass.h
+    strength_reduction_pass.h
+    strip_debug_info_pass.h
+    strip_reflect_info_pass.h
+    tree_iterator.h
+    type_manager.h
+    types.h
+    unify_const_pass.h
+    value_number_table.h
+    vector_dce.h
+    workaround1209.h
+    )
+
 add_library(SPIRV-Tools-opt
-  aggressive_dead_code_elim_pass.h
-  basic_block.h
-  block_merge_pass.h
-  build_module.h
-  ccp_pass.h
-  cfg_cleanup_pass.h
-  cfg.h
-  common_uniform_elim_pass.h
-  compact_ids_pass.h
-  composite.h
-  const_folding_rules.h
-  constants.h
-  copy_prop_arrays.h
-  dead_branch_elim_pass.h
-  dead_insert_elim_pass.h
-  dead_variable_elimination.h
-  decoration_manager.h
-  def_use_manager.h
-  dominator_analysis.h
-  dominator_tree.h
-  eliminate_dead_constant_pass.h
-  eliminate_dead_functions_pass.h
-  feature_manager.h
-  flatten_decoration_pass.h
-  fold.h
-  folding_rules.h
-  fold_spec_constant_op_and_composite_pass.h
-  freeze_spec_constant_value_pass.h
-  function.h
-  if_conversion.h
-  inline_exhaustive_pass.h
-  inline_opaque_pass.h
-  inline_pass.h
-  insert_extract_elim.h
-  instruction.h
-  instruction_list.h
-  ir_builder.h
-  ir_context.h
-  ir_loader.h
-  licm_pass.h
-  local_access_chain_convert_pass.h
-  local_redundancy_elimination.h
-  local_single_block_elim_pass.h
-  local_single_store_elim_pass.h
-  local_ssa_elim_pass.h
-  log.h
-  loop_dependence.h
-  loop_descriptor.h
-  loop_peeling.h
-  loop_unroller.h
-  loop_utils.h
-  loop_unswitch_pass.h
-  make_unique.h
-  mem_pass.h
-  merge_return_pass.h
-  module.h
-  null_pass.h
-  passes.h
-  pass.h
-  pass_manager.h
-  private_to_local_pass.h
-  propagator.h
-  redundancy_elimination.h
-  reflect.h
-  register_pressure.h
-  remove_duplicates_pass.h
-  replace_invalid_opc.h
-  scalar_analysis.h
-  scalar_analysis_nodes.h
-  scalar_replacement_pass.h
-  set_spec_constant_default_value_pass.h
-  simplification_pass.h
-  ssa_rewrite_pass.h
-  strength_reduction_pass.h
-  strip_debug_info_pass.h
-  strip_reflect_info_pass.h
-  tree_iterator.h
-  type_manager.h
-  types.h
-  unify_const_pass.h
-  value_number_table.h
-  vector_dce.h
-  workaround1209.h
+  ${SPIRV_TOOLS_OPT_HEADERS}
 
   aggressive_dead_code_elim_pass.cpp
   basic_block.cpp
@@ -194,5 +198,8 @@ if(ENABLE_SPIRV_TOOLS_INSTALL)
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+  install(FILES ${SPIRV_TOOLS_OPT_HEADERS}
+      DESTINATION include/spirv-tools/opt/)
 endif(ENABLE_SPIRV_TOOLS_INSTALL)
     

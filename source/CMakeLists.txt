@@ -39,6 +39,11 @@ macro(spvtools_core_tables VERSION)
     COMMENT "Generate info tables for SPIR-V v${VERSION} core instructions and operands.")
   list(APPEND OPCODE_CPP_DEPENDS ${GRAMMAR_INSTS_INC_FILE})
   list(APPEND OPERAND_CPP_DEPENDS ${GRAMMAR_KINDS_INC_FILE})
+
+  install(
+      FILES ${GRAMMAR_INSTS_INC_FILE} ${GRAMMAR_KINDS_INC_FILE}
+      DESTINATION include/
+      )
 endmacro(spvtools_core_tables)
 
 macro(spvtools_enum_string_mapping VERSION)
@@ -56,6 +61,11 @@ macro(spvtools_enum_string_mapping VERSION)
     COMMENT "Generate enum-string mapping for SPIR-V v${VERSION}.")
   list(APPEND EXTENSION_H_DEPENDS ${GRAMMAR_EXTENSION_ENUM_INC_FILE})
   list(APPEND ENUM_STRING_MAPPING_CPP_DEPENDS ${GRAMMAR_ENUM_STRING_MAPPING_INC_FILE})
+
+  install(
+      FILES ${GRAMMAR_EXTENSION_ENUM_INC_FILE} ${GRAMMAR_ENUM_STRING_MAPPING_INC_FILE}
+      DESTINATION include/
+      )
 endmacro(spvtools_enum_string_mapping)
 
 macro(spvtools_vimsyntax VERSION CLVERSION)
@@ -86,6 +96,11 @@ macro(spvtools_glsl_tables VERSION)
     DEPENDS ${GRAMMAR_PROCESSING_SCRIPT} ${CORE_GRAMMAR_JSON_FILE} ${GLSL_GRAMMAR_JSON_FILE}
     COMMENT "Generate info tables for GLSL extended instructions and operands v${VERSION}.")
   list(APPEND EXTINST_CPP_DEPENDS ${GRAMMAR_INC_FILE})
+
+  install(
+      FILES ${GRAMMAR_INC_FILE}
+      DESTINATION include/
+      )
 endmacro(spvtools_glsl_tables)
 
 macro(spvtools_opencl_tables VERSION)
