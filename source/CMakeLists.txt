@@ -270,7 +270,7 @@ set( SPIRV_INTERNAL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_stream.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bit_vector.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/bitutils.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/util/hexfloat.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/hex_float.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/huffman_codec.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/ilist.h
     ${CMAKE_CURRENT_SOURCE_DIR}/util/ilist_node.h
